@@ -2,13 +2,11 @@ chromeExtensions: &chromeExtensions
   ExtensionManifestV2Availability: 2
   ExtensionInstallForcelist:
   - cjpalhdlnbpafiamejdnhcphjbkeiagm # uBlock Origin; Chrome Web Store
-  - fhcgjolkccmbidfldomjliifgaodjagh # Cookie AutoDelete; Chrome Web Store
-  - nkgllhigpcljnhoakjkgaieabnkmgdkb # Don't f*** with paste; Chrome Web Store
-  - edibdbjcniadpccecjdfdjjppcpchdlm # I still don't care about cookies; Chrome Web Store
   - mnjggcdmjocbbbhaepdhchncahnbgone # SponsorBlock; Chrome Web Store
-  - bbeaicapbccfllodepmimpkgecanonai # BlockTube; Chrome Web Store
-  - jaadjnlkjnhohljficgoddcjmndjfdmi # Blank Tab; Chrome Web Store
-  - ldpochfccmkkmhdbclfhpagapcfdljkj # Decentraleyes; Chrome Web Store
+  - jinjaccalgkegednnccohejagnlnfdag # Violentmonkey; Chrome Web Store
+  - eningockdidmgiojffjmkdblpjocbhgh # Header Editor; Chrome Web Store
+  - cnojnbdhbhnkbcieeekonklommdnndci # Search By Image; Chrome Web Store
+  - mpiodijhokgodhhofbcjdecpffjipkle # Single File; Chrome Web Store
 
 # https://chromeenterprise.google/policies/
 chrome: &chrome
@@ -22,7 +20,7 @@ chrome: &chrome
   # Cloud Reporting
   CloudReportingEnabled: false
   # Drive
-  DriveDisabled: true
+  # DriveDisabled: true
   # Password
   PasswordManagerEnabled: false
   PasswordSharingEnabled: false
@@ -85,10 +83,12 @@ edge: &edge
   ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled: true
   BlockExternalExtensions: false
   ExtensionInstallForcelist:
-  - odfafepnkmbhccpbejgmiehpchacaeak # uBlock Origin; Edge Web Store
-  - djkjpnciiommncecmdefpdllknjdmmmo # Cookie AutoDelete; Edge Web Store
-  - kkacdgacpkediooahopgcbdahlpipheh # I still don't care about cookies; Edge Web Store
-  - ihknoknoahjhldmpdoajjdkfjhddgpcd # Blank Tab; Edge Web Store
+  - cjpalhdlnbpafiamejdnhcphjbkeiagm # uBlock Origin; Chrome Web Store
+  - mnjggcdmjocbbbhaepdhchncahnbgone # SponsorBlock; Chrome Web Store
+  - jinjaccalgkegednnccohejagnlnfdag # Violentmonkey; Chrome Web Store
+  - eningockdidmgiojffjmkdblpjocbhgh # Header Editor; Chrome Web Store
+  - cnojnbdhbhnkbcieeekonklommdnndci # Search By Image; Chrome Web Store
+  - mpiodijhokgodhhofbcjdecpffjipkle # Single File; Chrome Web Store
   # Identity & SignIn
   ImplicitSignInEnabled: false
   LinkedAccountEnabled: false
