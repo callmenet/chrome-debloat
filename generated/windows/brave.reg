@@ -24,10 +24,12 @@ Windows Registry Editor Version 5.00
 "DeviceMetricsReportingEnabled"=dword:00000000
 "HeartbeatEnabled"=dword:00000000
 "LogUploadEnabled"=dword:00000000
+"ReportAppInventory"=""
 "ReportDeviceActivityTimes"=dword:00000000
 "ReportDeviceAppInfo"=dword:00000000
 "ReportDeviceSystemInfo"=dword:00000000
 "ReportDeviceUsers"=dword:00000000
+"ReportWebsiteTelemetry"=""
 "AlternateErrorPagesEnabled"=dword:00000000
 "AutofillCreditCardEnabled"=dword:00000000
 "BackgroundModeEnabled"=dword:00000000
@@ -49,5 +51,3 @@ Windows Registry Editor Version 5.00
 "4"="eningockdidmgiojffjmkdblpjocbhgh"
 "5"="cnojnbdhbhnkbcieeekonklommdnndci"
 "6"="mpiodijhokgodhhofbcjdecpffjipkle"
-"ReportAppInventory"=""
-"ReportWebsiteTelemetry"=""
