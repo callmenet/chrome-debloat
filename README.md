@@ -8,59 +8,45 @@ A tool to generate policies for Chromium-based browsers (Chrome, Brave, and Edge
 - Removes unnecessary features and pre-installed bloatware
 - Blocks promotional content and unnecessary UI elements
 - Maintains browser functionality while reducing resource usage
-- Pre-configures essential extensions:
+- Pre-configures essential extensions (force-installs):
   - uBlock Origin
-  - Cookie AutoDelete
-  - Don't f*** with paste
-  - I still don't care about cookies
   - SponsorBlock
-  - BlockTube
-  - BlankTab
-  - Decentraleyes
+  - Violentmonkey
+  - Header Editor
+  - Search By Image
+  - SingleFile
 
 ### Supported Browsers
 
 | Browser | Windows | macOS | Linux |
 |---------|---------|-------|-------|
-| Google Chrome | ✅ | ✅ | ❌ |
-| Microsoft Edge | ✅ | ✅ | ❌ |
-| Brave | ✅ | ✅ | ❌ |
+| Google Chrome | ✅ | ✅ | ✅ |
+| Microsoft Edge | ✅ | ✅ | ✅ |
+| Brave | ✅ | ✅ | ✅ |
 
 ## Quick Start
 
 ### Windows
-1. Download the `.reg` file for your browser from the `generated/windows/` directory
-2. Double click to import the registry settings
-3. Restart your browser or visit `chrome://policy` and click "Reload Policy" 
+1. Download the `.reg` file for your browser from the `generated/windows/` directory.
+2. Double click the file and confirm the prompt to import the registry settings.
+3. Restart your browser or visit `chrome://policy` (or `edge://policy`, `brave://policy`) and click "Reload policies".
 
 ### macOS
-1. Download the `.mobileconfig` file for your browser from the `generated/macos/` directory
-2. Double click to install the profile
-3. Approve the profile installation in System Settings > Privacy & Security > Profiles
-4. Restart your browser or visit `chrome://policy` and click "Reload Policy" 
+1. Download the `.mobileconfig` file for your browser from the `generated/macos/` directory.
+2. Double click the file to install the profile.
+3. Open System Settings > Privacy & Security > Profiles.
+4. Find the newly added profile (it might be under "Downloaded"), double-click it, and click "Install...". Approve the installation.
+5. Restart your browser or visit `chrome://policy` (or `edge://policy`, `brave://policy`) and click "Reload policies".
 
-## Custom Configuration
+### Linux
+*Note: You will need root privileges (`sudo`) to place the policy files.*
 
-If you want to customize the policies:
-
-1. Clone this repository
-2. Install dependencies:
-   ```bash
-   uv sync
-   ```
-3. Modify `policies.yaml` according to your needs
-4. Generate new configuration files:
-   ```bash
-   uv run main.py
-   ```
-5. Find the generated files in `generated/` directory
-
-## Policy Documentation
-
-- [Chrome Enterprise Policies](https://chromeenterprise.google/policies/)
-- [Brave Policies](https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy)
-- [Microsoft Edge Policies](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies)
-
-## License
-
-[Apache 2.0](./LICENSE)
+1. Download the `.json` file for your browser from the `generated/linux/` directory.
+2. Determine the correct policy directory for your browser:
+    *   **Google Chrome:** `/etc/opt/chrome/policies/managed/`
+    *   **Brave:** `/etc/brave/policies/managed/`
+    *   **Microsoft Edge:** `/etc/opt/edge/policies/managed/`
+    *   *(For other Chromium-based browsers, check their documentation for the policy directory)*
+3. Create the directory if it doesn't exist (e.g., `sudo mkdir -p /etc/opt/chrome/policies/managed/`).
+4. Copy the downloaded `.json` file into the corresponding `managed` directory (e.g., `sudo cp generated/linux/chrome.json /etc/opt/chrome/policies/managed/`). Ensure the filename inside the target directory matches what the browser expects (usually the same as the downloaded filename, e.g., `chrome.json`).
+5. Restart your browser or visit `chrome://policy` (or `edge://policy`, `brave://policy`) and click "Reload policies".
