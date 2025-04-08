@@ -47,10 +47,12 @@
 			<false/>
 			<key>ExtensionInstallForcelist</key>
 			<array>
-				<string>odfafepnkmbhccpbejgmiehpchacaeak</string>
-				<string>djkjpnciiommncecmdefpdllknjdmmmo</string>
-				<string>kkacdgacpkediooahopgcbdahlpipheh</string>
-				<string>ihknoknoahjhldmpdoajjdkfjhddgpcd</string>
+				<string>cjpalhdlnbpafiamejdnhcphjbkeiagm</string>
+				<string>mnjggcdmjocbbbhaepdhchncahnbgone</string>
+				<string>jinjaccalgkegednnccohejagnlnfdag</string>
+				<string>eningockdidmgiojffjmkdblpjocbhgh</string>
+				<string>cnojnbdhbhnkbcieeekonklommdnndci</string>
+				<string>mpiodijhokgodhhofbcjdecpffjipkle</string>
 			</array>
 			<key>ImplicitSignInEnabled</key>
 			<false/>
@@ -220,8 +222,6 @@
 			<integer>2</integer>
 			<key>CloudReportingEnabled</key>
 			<false/>
-			<key>DriveDisabled</key>
-			<true/>
 			<key>PasswordManagerEnabled</key>
 			<false/>
 			<key>PasswordSharingEnabled</key>

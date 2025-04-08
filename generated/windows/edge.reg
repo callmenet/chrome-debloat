@@ -92,7 +92,6 @@ Windows Registry Editor Version 5.00
 "DefaultSensorsSetting"=dword:00000002
 "DefaultSerialGuardSetting"=dword:00000002
 "CloudReportingEnabled"=dword:00000000
-"DriveDisabled"=dword:00000001
 "PasswordManagerEnabled"=dword:00000000
 "PasswordSharingEnabled"=dword:00000000
 "PasswordLeakDetectionEnabled"=dword:00000000
@@ -104,12 +103,10 @@ Windows Registry Editor Version 5.00
 "DeviceMetricsReportingEnabled"=dword:00000000
 "HeartbeatEnabled"=dword:00000000
 "LogUploadEnabled"=dword:00000000
-"ReportAppInventory"=""
 "ReportDeviceActivityTimes"=dword:00000000
 "ReportDeviceAppInfo"=dword:00000000
 "ReportDeviceSystemInfo"=dword:00000000
 "ReportDeviceUsers"=dword:00000000
-"ReportWebsiteTelemetry"=""
 "AutofillCreditCardEnabled"=dword:00000000
 "BackgroundModeEnabled"=dword:00000000
 "BrowserGuestModeEnabled"=dword:00000000
@@ -123,7 +120,11 @@ Windows Registry Editor Version 5.00
 "ExtensionManifestV2Availability"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge\ExtensionInstallForcelist]
-"1"="odfafepnkmbhccpbejgmiehpchacaeak"
-"2"="djkjpnciiommncecmdefpdllknjdmmmo"
-"3"="kkacdgacpkediooahopgcbdahlpipheh"
-"4"="ihknoknoahjhldmpdoajjdkfjhddgpcd"
+"1"="cjpalhdlnbpafiamejdnhcphjbkeiagm"
+"2"="mnjggcdmjocbbbhaepdhchncahnbgone"
+"3"="jinjaccalgkegednnccohejagnlnfdag"
+"4"="eningockdidmgiojffjmkdblpjocbhgh"
+"5"="cnojnbdhbhnkbcieeekonklommdnndci"
+"6"="mpiodijhokgodhhofbcjdecpffjipkle"
+"ReportAppInventory"=""
+"ReportWebsiteTelemetry"=""
