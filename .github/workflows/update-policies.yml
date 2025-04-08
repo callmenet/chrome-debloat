@@ -1,0 +1,65 @@
+name: Update Generated Policies
+
+on:
+  # Trigger on push to main branch if policies.yaml changes
+  push:
+    branches:
+      - main
+    paths:
+      - 'policies.yaml'
+
+  # Allow manual triggering from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Generate policies
+        run: uv run main.py
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and Push Changes
+        run: |
+          # If triggered manually, checkout the main branch explicitly
+          # GITHUB_REF will be refs/heads/main for workflow_dispatch on main
+          # For push events, it's already on the correct branch.
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+             git checkout main
+          fi
+
+          git add generated/
+          if ! git diff --staged --quiet; then
+            echo "Changes detected in generated policies."
+            # Use a different commit message for manual runs if desired
+            COMMIT_MSG="chore: Manually update generated policies"
+            if [[ "${{ github.event_name }}" == "push" ]]; then
+               COMMIT_MSG="chore: Auto-update generated policies from policies.yaml"
+            fi
+            git commit -m "$COMMIT_MSG"
+            git push
+          else
+            echo "No changes in generated policies to commit."
+          fi
