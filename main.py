@@ -97,8 +97,6 @@ def make_registry_config(policies: dict, metadata: dict) -> str:
         "ExtensionInstallForcelist",
         "ExtensionInstallAllowlist",
         "ExtensionInstallBlocklist",
-        "ReportAppInventory",
-        "ReportWebsiteTelemetry",
     ]
     for key in list_policy_keys:
         if key in policies:
@@ -118,11 +116,6 @@ def make_registry_config(policies: dict, metadata: dict) -> str:
     # Add list-based policies.
     for policy_name, policy_values in list_policies.items():
         if policy_values is not None:
-            # Report* policies with [""] are a special case: set an empty string value directly.
-            if policy_name in ["ReportAppInventory", "ReportWebsiteTelemetry"] and policy_values == [""]:
-                 content.append(f'"{policy_name}"=""')
-                 continue
-
             if policy_values:
                 content.append("")
                 content.append(f"[{base_key}\\{policy_name}]")
