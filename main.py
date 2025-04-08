@@ -1,6 +1,8 @@
 from ruamel.yaml import YAML
 import plistlib
 from pathlib import Path
+import json
+import sys
 
 yaml = YAML()
 
@@ -22,6 +24,10 @@ METADATA = {
         "registry": {
             "key": r"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome",
         },
+        "json": {
+             "filename": "chrome.json",
+             "install_path_hint": "/etc/opt/chrome/policies/managed/"
+        }
     },
     POLICY_BRAVE: {
         "mobileconfig": {
@@ -35,23 +41,32 @@ METADATA = {
         "registry": {
             "key": r"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave",
         },
+        "json": {
+            "filename": "brave.json",
+            "install_path_hint": "/etc/brave/policies/managed/"
+        }
     },
     POLICY_EDGE: {
         "mobileconfig": {
             "PayloadDisplayName": "Microsoft Edge Policies",
             "PayloadDescription": "Microsoft Edge Browser system-level policies",
             "PayloadIdentifier": "com.microsoft.Edge",
+            "PayloadType": "com.microsoft.Edge",
             "PayloadUUID": "778fb3c3-2e58-4337-86dc-1a8044793d2d",
             "PayloadContentUUID": "65ffbe44-b556-4c33-88ea-ab684dab69bc",
         },
         "registry": {
             "key": r"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge",
         },
+        "json": {
+            "filename": "edge.json",
+            "install_path_hint": "/etc/opt/edge/policies/managed/"
+        }
     },
 }
 
-
 def format_reg_value(value) -> str:
+    """Formats a Python value into a Windows Registry .reg file value string."""
     if isinstance(value, bool):
         return f"dword:{'00000001' if value else '00000000'}"
     elif isinstance(value, int):
@@ -65,50 +80,61 @@ def format_reg_value(value) -> str:
 
 
 def load_policies(path: str) -> dict:
+    """Loads policies from a YAML file."""
     with open(path, "r") as fp:
         return yaml.load(fp.read())
 
 
 def make_registry_config(policies: dict, metadata: dict) -> str:
+    """Generates the content for a Windows .reg file from policies."""
     policies = policies.copy()
     content = ["Windows Registry Editor Version 5.00", ""]
     base_key = metadata["key"]
-    extension_policies = {
-        key: policies.pop(key)
-        for key in [
-            "ExtensionInstallForcelist",
-            "ExtensionInstallAllowlist",
-            "ExtensionInstallBlocklist",
-        ]
-        if key in policies
-    }
+    list_policies = {}
 
-    # Add the main key and regular policies
+    # Separate list-based policies as they need specific handling (numbered subkeys/values) in .reg files.
+    list_policy_keys = [
+        "ExtensionInstallForcelist",
+        "ExtensionInstallAllowlist",
+        "ExtensionInstallBlocklist",
+        "ReportAppInventory",
+        "ReportWebsiteTelemetry",
+    ]
+    for key in list_policy_keys:
+        if key in policies:
+            list_policies[key] = policies.pop(key)
+
     content.append(f"[{base_key}]")
     for policy_name, policy_value in policies.items():
         if isinstance(policy_value, dict):
-            # Handle nested policies by creating subkeys
+            # Handle nested policies by creating subkeys.
             content.append("")
             content.append(f"[{base_key}\\{policy_name}]")
             for sub_name, sub_value in policy_value.items():
-                content.append(f'"{sub_name}"={format_reg_value(sub_value)}')
+                 content.append(f'"{sub_name}"={format_reg_value(sub_value)}')
         else:
-            # Handle direct policy values
             content.append(f'"{policy_name}"={format_reg_value(policy_value)}')
 
-    # Add extension policies at the end
-    for policy_name, extensions in extension_policies.items():
-        if extensions:  # Only create key if there are extensions
-            content.append("")
-            content.append(f"[{base_key}\\{policy_name}]")
-            for i, ext in enumerate(extensions, 1):
-                content.append(f'"{i}"="{ext}"')
+    # Add list-based policies.
+    for policy_name, policy_values in list_policies.items():
+        if policy_values is not None:
+            # Report* policies with [""] are a special case: set an empty string value directly.
+            if policy_name in ["ReportAppInventory", "ReportWebsiteTelemetry"] and policy_values == [""]:
+                 content.append(f'"{policy_name}"=""')
+                 continue
 
-    # Join all lines with Windows-style line endings
+            if policy_values:
+                content.append("")
+                content.append(f"[{base_key}\\{policy_name}]")
+                if isinstance(policy_values, list) and policy_values != [""]:
+                     for i, value in enumerate(policy_values, 1):
+                          content.append(f'"{i}"="{value}"')
+
     return "\r\n".join(content)
 
 
-def make_mobileconfig(policies: dict, metadata: dict) -> str:
+def make_mobileconfig(policies: dict, metadata: dict) -> bytes:
+    """Generates the content for a macOS .mobileconfig file (as bytes)."""
     config = {
         "PayloadVersion": 1,
         "PayloadScope": "System",
@@ -121,7 +147,7 @@ def make_mobileconfig(policies: dict, metadata: dict) -> str:
         "PayloadContent": [
             {
                 "PayloadIdentifier": metadata["PayloadIdentifier"],
-                "PayloadType": metadata["PayloadIdentifier"],
+                "PayloadType": metadata["PayloadType"],
                 "PayloadUUID": metadata["PayloadContentUUID"],
                 "PayloadVersion": 1,
                 "PayloadEnabled": True,
@@ -129,47 +155,97 @@ def make_mobileconfig(policies: dict, metadata: dict) -> str:
             }
         ],
     }
-    return plistlib.dumps(config, sort_keys=False)
+    # Use standard XML plist format; required by macOS profiles. Returns bytes.
+    return plistlib.dumps(config, sort_keys=False, fmt=plistlib.FMT_XML)
+
+
+def make_json_config(policies: dict, metadata: dict) -> str:
+    """Formats the policy dictionary as a JSON string for Linux."""
+    # Chromium on Linux expects a simple JSON object with policy keys/values.
+    return json.dumps(policies, indent=4)
 
 
 def write_mobile_config(path: str, policy_content: dict, metadata: dict):
+    """Writes the policy content to a macOS .mobileconfig file."""
     try:
         mc_path = Path(path)
         mc_path.parent.mkdir(parents=True, exist_ok=True)
-        conf = make_mobileconfig(policy_content, metadata)
-        with mc_path.open("wb") as fp:
-            fp.write(conf)
+        conf_bytes = make_mobileconfig(policy_content, metadata)
+        with mc_path.open("wb") as fp: # Requires binary write mode.
+            fp.write(conf_bytes)
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error writing mobileconfig {path}: {e}")
 
 
 def write_reg_config(path: str, policy_content: dict, metadata: dict):
+    """Writes the policy content to a Windows .reg file."""
     try:
         reg_path = Path(path)
         reg_path.parent.mkdir(parents=True, exist_ok=True)
         conf = make_registry_config(policy_content, metadata)
-        with reg_path.open("w") as fp:
+        # Use UTF-8 without BOM for .reg files; generally safer for compatibility.
+        with reg_path.open("w", encoding='utf-8') as fp:
             fp.write(conf)
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error writing registry config {path}: {e}")
+
+
+def write_json_config(path: str, policy_content: dict, metadata: dict):
+    """Writes the policy content to a Linux JSON file."""
+    try:
+        json_path = Path(path)
+        json_path.parent.mkdir(parents=True, exist_ok=True)
+        conf_string = make_json_config(policy_content, metadata)
+        with json_path.open("w", encoding='utf-8') as fp:
+            fp.write(conf_string)
+            fp.write("\n") # Add trailing newline.
+    except Exception as e:
+        print(f"Error writing JSON config {path}: {e}")
 
 
 def main():
-    """Generate OS-specific browser policies from policy spec"""
+    """Load policy definitions and generate OS-specific configuration files."""
 
-    policies = load_policies("policies.yaml")
+    try:
+        policies_data = load_policies("policies.yaml")
+    except Exception as e:
+        print(f"Error loading policies.yaml: {e}")
+        sys.exit(1)
+
+    output_dir = Path("./generated")
+
     for pname in [POLICY_CHROME, POLICY_BRAVE, POLICY_EDGE]:
-        print(f"Generating policies for '{pname}' ({len(policies[pname])} rules)")
-        write_mobile_config(
-            f"./generated/macos/{pname}.mobileconfig",
-            policies[pname],
-            METADATA[pname]["mobileconfig"],
-        )
-        write_reg_config(
-            f"./generated/windows/{pname}.reg",
-            policies[pname],
-            METADATA[pname]["registry"],
-        )
+        if pname not in policies_data:
+             print(f"Warning: No policies found for '{pname}' in policies.yaml. Skipping.")
+             continue
+        if pname not in METADATA:
+             print(f"Warning: No metadata found for '{pname}'. Skipping.")
+             continue
+
+        print(f"Generating policies for '{pname}' ({len(policies_data[pname])} rules)")
+
+        policy_content = policies_data[pname]
+
+        if "mobileconfig" in METADATA[pname]:
+             mc_meta = METADATA[pname]["mobileconfig"]
+             mc_filename = f"{pname}.mobileconfig"
+             mc_path = output_dir / "macos" / mc_filename
+             write_mobile_config(str(mc_path), policy_content, mc_meta)
+
+        if "registry" in METADATA[pname]:
+            reg_meta = METADATA[pname]["registry"]
+            reg_filename = f"{pname}.reg"
+            reg_path = output_dir / "windows" / reg_filename
+            write_reg_config(str(reg_path), policy_content, reg_meta)
+
+        if "json" in METADATA[pname]:
+            json_meta = METADATA[pname]["json"]
+            json_filename = json_meta.get("filename", f"{pname}.json")
+            json_path = output_dir / "linux" / json_filename
+            write_json_config(str(json_path), policy_content, json_meta)
+
+    print("\nPolicy generation complete.")
+    print(f"Generated files are in the '{output_dir}' directory.")
 
 
 if __name__ == "__main__":
