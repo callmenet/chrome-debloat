@@ -7,6 +7,7 @@ chromeExtensions: &chromeExtensions
   - eningockdidmgiojffjmkdblpjocbhgh # Header Editor; Chrome Web Store
   - cnojnbdhbhnkbcieeekonklommdnndci # Search By Image; Chrome Web Store
   - mpiodijhokgodhhofbcjdecpffjipkle # Single File; Chrome Web Store
+  - pfnededegaaopdmhkdmcofjmoldfiped # Zero Omega; Chrome Web Store
 
 # https://chromeenterprise.google/policies/
 chrome: &chrome
@@ -83,12 +84,13 @@ edge: &edge
   ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled: true
   BlockExternalExtensions: false
   ExtensionInstallForcelist:
-  - cjpalhdlnbpafiamejdnhcphjbkeiagm # uBlock Origin; Chrome Web Store
-  - mnjggcdmjocbbbhaepdhchncahnbgone # SponsorBlock; Chrome Web Store
-  - jinjaccalgkegednnccohejagnlnfdag # Violentmonkey; Chrome Web Store
-  - eningockdidmgiojffjmkdblpjocbhgh # Header Editor; Chrome Web Store
-  - cnojnbdhbhnkbcieeekonklommdnndci # Search By Image; Chrome Web Store
-  - mpiodijhokgodhhofbcjdecpffjipkle # Single File; Chrome Web Store
+  - odfafepnkmbhccpbejgmiehpchacaeak # uBlock Origin; Edge Add-ons
+  - mbmgnelfcpoecdepckhlhegpcehmpmji # SponsorBlock; Edge Add-ons
+  - eeagobfjdenkkddmbclomhiblgggliao # Violentmonkey; Edge Add-ons
+  - afopnekiinpekooejpchnkgfffaeceko # Header Editor; Edge Add-ons
+  - hckehkfhdkpmdlonmjaagiodlpjbonmc # Search By Image; Edge Add-ons
+  - efnbkdcfmcmnhlkaijjjmhjjgladedno # Single File; Edge Add-ons
+  - dmaldhchmoafliphkijbfhaomcgglmgd # Zero Omega; Edge Add-ons
   # Identity & SignIn
   ImplicitSignInEnabled: false
   LinkedAccountEnabled: false
@@ -125,7 +127,7 @@ edge: &edge
   AllowGamesMenu: false
   AlternateErrorPagesEnabled: false
   AmbientAuthenticationInPrivateModesEnabled: false
-  AutomaticHttpsDefault: true # improved QoL
+  AutomaticHttpsDefault: true
   BingAdsSuppression: true
   ComposeInlineEnabled: false
   ConfigureDoNotTrack: false
@@ -160,14 +162,13 @@ edge: &edge
   PersonalizeTopSitesInCustomizeSidebarEnabled: false
   PictureInPictureOverlayEnabled: false
   PromotionalTabsEnabled: false
-  PromptForDownloadLocation: false # improved QoL
   ResolveNavigationErrorsUseWebService: false
   ShowMicrosoftRewards: false
   ShowRecommendationsEnabled: false
   SpeechRecognitionEnabled: false
   StandaloneHubsSidebarEnabled: false
   TextPredictionEnabled: false
-  TranslateEnabled: true # improved QoL
+  TranslateEnabled: false
   TravelAssistanceEnabled: false
   UploadFromPhoneEnabled: false
   UrlDiagnosticDataEnabled: false
