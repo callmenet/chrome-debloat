@@ -47,12 +47,13 @@
 			<false/>
 			<key>ExtensionInstallForcelist</key>
 			<array>
-				<string>cjpalhdlnbpafiamejdnhcphjbkeiagm</string>
-				<string>mnjggcdmjocbbbhaepdhchncahnbgone</string>
-				<string>jinjaccalgkegednnccohejagnlnfdag</string>
-				<string>eningockdidmgiojffjmkdblpjocbhgh</string>
-				<string>cnojnbdhbhnkbcieeekonklommdnndci</string>
-				<string>mpiodijhokgodhhofbcjdecpffjipkle</string>
+				<string>odfafepnkmbhccpbejgmiehpchacaeak</string>
+				<string>mbmgnelfcpoecdepckhlhegpcehmpmji</string>
+				<string>eeagobfjdenkkddmbclomhiblgggliao</string>
+				<string>afopnekiinpekooejpchnkgfffaeceko</string>
+				<string>hckehkfhdkpmdlonmjaagiodlpjbonmc</string>
+				<string>efnbkdcfmcmnhlkaijjjmhjjgladedno</string>
+				<string>dmaldhchmoafliphkijbfhaomcgglmgd</string>
 			</array>
 			<key>ImplicitSignInEnabled</key>
 			<false/>
@@ -180,8 +181,6 @@
 			<false/>
 			<key>PromotionalTabsEnabled</key>
 			<false/>
-			<key>PromptForDownloadLocation</key>
-			<false/>
 			<key>ResolveNavigationErrorsUseWebService</key>
 			<false/>
 			<key>ShowMicrosoftRewards</key>
@@ -195,7 +194,7 @@
 			<key>TextPredictionEnabled</key>
 			<false/>
 			<key>TranslateEnabled</key>
-			<true/>
+			<false/>
 			<key>TravelAssistanceEnabled</key>
 			<false/>
 			<key>UploadFromPhoneEnabled</key>
