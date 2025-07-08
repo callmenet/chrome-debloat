@@ -209,6 +209,8 @@
 			<false/>
 			<key>WebWidgetAllowed</key>
 			<false/>
+			<key>WebRtcLocalhostIpHandling</key>
+			<string>disable_non_proxied_udp</string>
 			<key>DefaultGeolocationSetting</key>
 			<integer>2</integer>
 			<key>DefaultNotificationsSetting</key>

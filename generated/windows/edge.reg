@@ -85,6 +85,7 @@ Windows Registry Editor Version 5.00
 "VisualSearchEnabled"=dword:00000000
 "WalletDonationEnabled"=dword:00000000
 "WebWidgetAllowed"=dword:00000000
+"WebRtcLocalhostIpHandling"="disable_non_proxied_udp"
 "DefaultGeolocationSetting"=dword:00000002
 "DefaultNotificationsSetting"=dword:00000002
 "DefaultLocalFontsSetting"=dword:00000002
