@@ -176,3 +176,4 @@ edge: &edge
   VisualSearchEnabled: false
   WalletDonationEnabled: false
   WebWidgetAllowed: false
+  WebRtcLocalhostIpHandling: disable_non_proxied_udp
