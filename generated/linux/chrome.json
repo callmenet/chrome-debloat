@@ -38,6 +38,7 @@
     "RelatedWebsiteSetsEnabled": false,
     "ShoppingListEnabled": false,
     "SyncDisabled": true,
+    "WebRtcIPHandling": "disable_non_proxied_udp",
     "ExtensionManifestV2Availability": 2,
     "ExtensionInstallForcelist": [
         "cjpalhdlnbpafiamejdnhcphjbkeiagm",

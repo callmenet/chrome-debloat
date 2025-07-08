@@ -42,6 +42,7 @@ Windows Registry Editor Version 5.00
 "RelatedWebsiteSetsEnabled"=dword:00000000
 "ShoppingListEnabled"=dword:00000000
 "SyncDisabled"=dword:00000001
+"WebRtcIPHandling"="disable_non_proxied_udp"
 "ExtensionManifestV2Availability"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave\ExtensionInstallForcelist]
