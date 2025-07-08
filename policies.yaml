@@ -58,6 +58,7 @@ chrome: &chrome
   RelatedWebsiteSetsEnabled: false
   ShoppingListEnabled: false
   SyncDisabled: true
+  WebRtcIPHandling: disable_non_proxied_udp
 
 # https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy
 brave: &brave
