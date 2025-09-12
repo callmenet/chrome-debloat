@@ -41,6 +41,12 @@
 			<true/>
 			<key>BraveAIChatEnabled</key>
 			<false/>
+			<key>BraveNewsDisabled</key>
+			<true/>
+			<key>BraveTalkDisabled</key>
+			<true/>
+			<key>BraveStatsPingEnabled</key>
+			<false/>
 			<key>BraveSyncUrl</key>
 			<string></string>
 			<key>DefaultGeolocationSetting</key>
@@ -129,7 +135,7 @@
 				<string>eningockdidmgiojffjmkdblpjocbhgh</string>
 				<string>cnojnbdhbhnkbcieeekonklommdnndci</string>
 				<string>mpiodijhokgodhhofbcjdecpffjipkle</string>
-				<string>pfnededegaaopdmhkdmcofjmoldfiped</string>
+				<string>gcknhkkoolaabfmlnjonogaaifnjlfnp</string>
 			</array>
 		</dict>
 	</array>

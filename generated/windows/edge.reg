@@ -14,9 +14,9 @@ Windows Registry Editor Version 5.00
 "EdgeManagementEnabled"=dword:00000000
 "EdgeManagementExtensionsFeedbackEnabled"=dword:00000000
 "MAMEnabled"=dword:00000000
-"PasswordGeneratorEnabled"=dword:00000000
-"PasswordRevealEnabled"=dword:00000000
+"PasswordManagerEnabled"=dword:00000000
 "PasswordMonitorAllowed"=dword:00000000
+"PasswordExportEnabled"=dword:00000000
 "RelatedWebsiteSetsEnabled"=dword:00000000
 "ScarewareBlockerProtectionEnabled"=dword:00000000
 "SmartScreenEnabled"=dword:00000000
@@ -28,7 +28,9 @@ Windows Registry Editor Version 5.00
 "NewTabPageContentEnabled"=dword:00000000
 "NewTabPageHideDefaultTopSites"=dword:00000001
 "NewTabPagePrerenderEnabled"=dword:00000000
-"NewTabPageQuickLinksEnabled"=dword:00000000
+"HttpsUpgradesEnabled"=dword:00000001
+"AutomaticHttpsDefault"=dword:00000001
+"WebRtcLocalhostIpHandling"="disable_non_proxied_udp"
 "AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
 "AccessibilityImageLabelsEnabled"=dword:00000000
 "AddressBarMicrosoftSearchInBingProviderEnabled"=dword:00000000
@@ -36,7 +38,6 @@ Windows Registry Editor Version 5.00
 "AllowGamesMenu"=dword:00000000
 "AlternateErrorPagesEnabled"=dword:00000000
 "AmbientAuthenticationInPrivateModesEnabled"=dword:00000000
-"AutomaticHttpsDefault"=dword:00000001
 "BingAdsSuppression"=dword:00000001
 "ComposeInlineEnabled"=dword:00000000
 "ConfigureDoNotTrack"=dword:00000000
@@ -85,14 +86,13 @@ Windows Registry Editor Version 5.00
 "VisualSearchEnabled"=dword:00000000
 "WalletDonationEnabled"=dword:00000000
 "WebWidgetAllowed"=dword:00000000
-"WebRtcLocalhostIpHandling"="disable_non_proxied_udp"
+"ShowAcrobatSubscriptionButton"=dword:00000000
 "DefaultGeolocationSetting"=dword:00000002
 "DefaultNotificationsSetting"=dword:00000002
 "DefaultLocalFontsSetting"=dword:00000002
 "DefaultSensorsSetting"=dword:00000002
 "DefaultSerialGuardSetting"=dword:00000002
 "CloudReportingEnabled"=dword:00000000
-"PasswordManagerEnabled"=dword:00000000
 "PasswordSharingEnabled"=dword:00000000
 "PasswordLeakDetectionEnabled"=dword:00000000
 "QuickAnswersEnabled"=dword:00000000
@@ -129,4 +129,4 @@ Windows Registry Editor Version 5.00
 "4"="afopnekiinpekooejpchnkgfffaeceko"
 "5"="hckehkfhdkpmdlonmjaagiodlpjbonmc"
 "6"="efnbkdcfmcmnhlkaijjjmhjjgladedno"
-"7"="dmaldhchmoafliphkijbfhaomcgglmgd"
+"7"="flcnoalcefgkhkinjkffipfdhglnpnem"

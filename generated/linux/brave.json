@@ -4,6 +4,9 @@
     "BraveWalletDisabled": true,
     "BraveVPNDisabled": true,
     "BraveAIChatEnabled": false,
+    "BraveNewsDisabled": true,
+    "BraveTalkDisabled": true,
+    "BraveStatsPingEnabled": false,
     "BraveSyncUrl": "",
     "DefaultGeolocationSetting": 2,
     "DefaultNotificationsSetting": 2,
@@ -53,6 +56,6 @@
         "eningockdidmgiojffjmkdblpjocbhgh",
         "cnojnbdhbhnkbcieeekonklommdnndci",
         "mpiodijhokgodhhofbcjdecpffjipkle",
-        "pfnededegaaopdmhkdmcofjmoldfiped"
+        "gcknhkkoolaabfmlnjonogaaifnjlfnp"
     ]
 }
