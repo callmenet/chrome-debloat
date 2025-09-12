@@ -7,7 +7,7 @@ chromeExtensions: &chromeExtensions
   - eningockdidmgiojffjmkdblpjocbhgh # Header Editor; Chrome Web Store
   - cnojnbdhbhnkbcieeekonklommdnndci # Search By Image; Chrome Web Store
   - mpiodijhokgodhhofbcjdecpffjipkle # Single File; Chrome Web Store
-  - pfnededegaaopdmhkdmcofjmoldfiped # Zero Omega; Chrome Web Store
+  - gcknhkkoolaabfmlnjonogaaifnjlfnp # FoxyProxy; Chrome Web Store
 
 # https://chromeenterprise.google/policies/
 chrome: &chrome
@@ -68,6 +68,9 @@ brave: &brave
   BraveWalletDisabled: true
   BraveVPNDisabled: true
   BraveAIChatEnabled: false
+  BraveNewsDisabled: true
+  BraveTalkDisabled: true
+  BraveStatsPingEnabled: false
   BraveSyncUrl: ""
 
 # https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies
@@ -91,7 +94,7 @@ edge: &edge
   - afopnekiinpekooejpchnkgfffaeceko # Header Editor; Edge Add-ons
   - hckehkfhdkpmdlonmjaagiodlpjbonmc # Search By Image; Edge Add-ons
   - efnbkdcfmcmnhlkaijjjmhjjgladedno # Single File; Edge Add-ons
-  - dmaldhchmoafliphkijbfhaomcgglmgd # Zero Omega; Edge Add-ons
+  - flcnoalcefgkhkinjkffipfdhglnpnem # FoxyProxy; Edge Add-ons
   # Identity & SignIn
   ImplicitSignInEnabled: false
   LinkedAccountEnabled: false
@@ -101,9 +104,9 @@ edge: &edge
   EdgeManagementExtensionsFeedbackEnabled: false
   MAMEnabled: false
   # Password Manager
-  PasswordGeneratorEnabled: false
-  PasswordRevealEnabled: false
+  PasswordManagerEnabled: false
   PasswordMonitorAllowed: false
+  PasswordExportEnabled: false
   # Related Website Sets
   RelatedWebsiteSetsEnabled: false
   # Scareware Blocker
@@ -119,7 +122,11 @@ edge: &edge
   NewTabPageContentEnabled: false
   NewTabPageHideDefaultTopSites: true
   NewTabPagePrerenderEnabled: false
-  NewTabPageQuickLinksEnabled: false
+  # Internet Protocol
+  HttpsUpgradesEnabled: true
+  AutomaticHttpsDefault: true
+  # Proxy
+  WebRtcLocalhostIpHandling: disable_non_proxied_udp
   # Additional
   AADWebSiteSSOUsingThisProfileEnabled: false
   AccessibilityImageLabelsEnabled: false
@@ -128,7 +135,6 @@ edge: &edge
   AllowGamesMenu: false
   AlternateErrorPagesEnabled: false
   AmbientAuthenticationInPrivateModesEnabled: false
-  AutomaticHttpsDefault: true
   BingAdsSuppression: true
   ComposeInlineEnabled: false
   ConfigureDoNotTrack: false
@@ -177,4 +183,4 @@ edge: &edge
   VisualSearchEnabled: false
   WalletDonationEnabled: false
   WebWidgetAllowed: false
-  WebRtcLocalhostIpHandling: disable_non_proxied_udp
+  ShowAcrobatSubscriptionButton: false
