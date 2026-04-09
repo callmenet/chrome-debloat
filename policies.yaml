@@ -1,17 +1,86 @@
-chromeExtensions: &chromeExtensions
-  ExtensionManifestV2Availability: 2
-  ExtensionInstallForcelist:
-  - cjpalhdlnbpafiamejdnhcphjbkeiagm # uBlock Origin; Chrome Web Store
-  - mnjggcdmjocbbbhaepdhchncahnbgone # SponsorBlock; Chrome Web Store
-  - jinjaccalgkegednnccohejagnlnfdag # Violentmonkey; Chrome Web Store
-  - eningockdidmgiojffjmkdblpjocbhgh # Header Editor; Chrome Web Store
-  - cnojnbdhbhnkbcieeekonklommdnndci # Search By Image; Chrome Web Store
-  - mpiodijhokgodhhofbcjdecpffjipkle # Single File; Chrome Web Store
-  - gcknhkkoolaabfmlnjonogaaifnjlfnp # FoxyProxy; Chrome Web Store
+chromeExtensionSettings: &chromeExtensionSettings
+  ExtensionSettings:
+    cjpalhdlnbpafiamejdnhcphjbkeiagm: # uBlock Origin; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://clients2.google.com/service/update2/crx
+    mnjggcdmjocbbbhaepdhchncahnbgone: # SponsorBlock; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://clients2.google.com/service/update2/crx
+    jinjaccalgkegednnccohejagnlnfdag: # Violentmonkey; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://clients2.google.com/service/update2/crx
+    eningockdidmgiojffjmkdblpjocbhgh: # Header Editor; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://clients2.google.com/service/update2/crx
+    cnojnbdhbhnkbcieeekonklommdnndci: # Search By Image; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://clients2.google.com/service/update2/crx
+    mpiodijhokgodhhofbcjdecpffjipkle: # Single File; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://clients2.google.com/service/update2/crx
+    gcknhkkoolaabfmlnjonogaaifnjlfnp: # FoxyProxy; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://clients2.google.com/service/update2/crx
+
+braveExtensionSettings: &braveExtensionSettings
+  ExtensionSettings:
+    cjpalhdlnbpafiamejdnhcphjbkeiagm: # uBlock Origin; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://extensionupdater.brave.com/service/update2/crx
+      override_update_url: true
+    mnjggcdmjocbbbhaepdhchncahnbgone: # SponsorBlock; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://extensionupdater.brave.com/service/update2/crx
+      override_update_url: true
+    jinjaccalgkegednnccohejagnlnfdag: # Violentmonkey; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://extensionupdater.brave.com/service/update2/crx
+      override_update_url: true
+    eningockdidmgiojffjmkdblpjocbhgh: # Header Editor; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://extensionupdater.brave.com/service/update2/crx
+      override_update_url: true
+    cnojnbdhbhnkbcieeekonklommdnndci: # Search By Image; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://extensionupdater.brave.com/service/update2/crx
+      override_update_url: true
+    mpiodijhokgodhhofbcjdecpffjipkle: # Single File; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://extensionupdater.brave.com/service/update2/crx
+      override_update_url: true
+    gcknhkkoolaabfmlnjonogaaifnjlfnp: # FoxyProxy; Chrome Web Store
+      installation_mode: normal_installed
+      update_url: https://extensionupdater.brave.com/service/update2/crx
+      override_update_url: true
+
+edgeExtensionSettings: &edgeExtensionSettings
+  ExtensionSettings:
+    odfafepnkmbhccpbejgmiehpchacaeak: # uBlock Origin; Edge Add-ons
+      installation_mode: normal_installed
+      update_url: https://edge.microsoft.com/extensionwebstorebase/v1/crx
+    mbmgnelfcpoecdepckhlhegpcehmpmji: # SponsorBlock; Edge Add-ons
+      installation_mode: normal_installed
+      update_url: https://edge.microsoft.com/extensionwebstorebase/v1/crx
+    eeagobfjdenkkddmbclomhiblgggliao: # Violentmonkey; Edge Add-ons
+      installation_mode: normal_installed
+      update_url: https://edge.microsoft.com/extensionwebstorebase/v1/crx
+    afopnekiinpekooejpchnkgfffaeceko: # Header Editor; Edge Add-ons
+      installation_mode: normal_installed
+      update_url: https://edge.microsoft.com/extensionwebstorebase/v1/crx
+    hckehkfhdkpmdlonmjaagiodlpjbonmc: # Search By Image; Edge Add-ons
+      installation_mode: normal_installed
+      update_url: https://edge.microsoft.com/extensionwebstorebase/v1/crx
+    efnbkdcfmcmnhlkaijjjmhjjgladedno: # Single File; Edge Add-ons
+      installation_mode: normal_installed
+      update_url: https://edge.microsoft.com/extensionwebstorebase/v1/crx
+    flcnoalcefgkhkinjkffipfdhglnpnem: # FoxyProxy; Edge Add-ons
+      installation_mode: normal_installed
+      update_url: https://edge.microsoft.com/extensionwebstorebase/v1/crx
 
 # https://chromeenterprise.google/policies/
 chrome: &chrome
-  <<: *chromeExtensions
+  <<: *chromeExtensionSettings
+  ExtensionManifestV2Availability: 2
   # Content Settings
   DefaultGeolocationSetting: 2
   DefaultNotificationsSetting: 2
@@ -20,6 +89,7 @@ chrome: &chrome
   DefaultSerialGuardSetting: 2
   # Cloud Reporting
   CloudReportingEnabled: false
+  CloudProfileReportingEnabled: false
   # Drive
   # DriveDisabled: true
   # Password
@@ -32,6 +102,10 @@ chrome: &chrome
   SafeBrowsingExtendedReportingEnabled: false
   SafeBrowsingSurveysEnabled: false
   SafeBrowsingDeepScanningEnabled: false
+  SafeBrowsingProxiedRealTimeChecksAllowed: false
+  # Security Signals
+  UserSecuritySignalsReporting: false
+  UserSecurityAuthenticatedReporting: false
   # User and device reporting
   DeviceActivityHeartbeatEnabled: false
   DeviceMetricsReportingEnabled: false
@@ -62,7 +136,7 @@ chrome: &chrome
 
 # https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy
 brave: &brave
-  <<: *chrome
+  <<: [*braveExtensionSettings, *chrome]
   TorDisabled: true
   BraveRewardsDisabled: true
   BraveWalletDisabled: true
@@ -71,11 +145,14 @@ brave: &brave
   BraveNewsDisabled: true
   BraveTalkDisabled: true
   BraveStatsPingEnabled: false
+  BraveP3AEnabled: "Disabled"
+  BraveWebDiscoveryEnabled: false
+  BraveWaybackMachineEnabled: false
   BraveSyncUrl: ""
 
 # https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies
 edge: &edge
-  <<: *chrome
+  <<: [*edgeExtensionSettings, *chrome]
   # Application Guard
   ApplicationGuardFavoritesSyncEnabled: false
   ApplicationGuardPassiveModeEnabled: false
@@ -87,14 +164,6 @@ edge: &edge
   # Extensions
   ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled: true
   BlockExternalExtensions: false
-  ExtensionInstallForcelist:
-  - odfafepnkmbhccpbejgmiehpchacaeak # uBlock Origin; Edge Add-ons
-  - mbmgnelfcpoecdepckhlhegpcehmpmji # SponsorBlock; Edge Add-ons
-  - eeagobfjdenkkddmbclomhiblgggliao # Violentmonkey; Edge Add-ons
-  - afopnekiinpekooejpchnkgfffaeceko # Header Editor; Edge Add-ons
-  - hckehkfhdkpmdlonmjaagiodlpjbonmc # Search By Image; Edge Add-ons
-  - efnbkdcfmcmnhlkaijjjmhjjgladedno # Single File; Edge Add-ons
-  - flcnoalcefgkhkinjkffipfdhglnpnem # FoxyProxy; Edge Add-ons
   # Identity & SignIn
   ImplicitSignInEnabled: false
   LinkedAccountEnabled: false

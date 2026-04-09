@@ -1,5 +1,7 @@
 Windows Registry Editor Version 5.00
 
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave]
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave]
 "TorDisabled"=dword:00000001
 "BraveRewardsDisabled"=dword:00000001
@@ -9,13 +11,18 @@ Windows Registry Editor Version 5.00
 "BraveNewsDisabled"=dword:00000001
 "BraveTalkDisabled"=dword:00000001
 "BraveStatsPingEnabled"=dword:00000000
+"BraveP3AEnabled"="Disabled"
+"BraveWebDiscoveryEnabled"=dword:00000000
+"BraveWaybackMachineEnabled"=dword:00000000
 "BraveSyncUrl"=""
+"ExtensionManifestV2Availability"=dword:00000002
 "DefaultGeolocationSetting"=dword:00000002
 "DefaultNotificationsSetting"=dword:00000002
 "DefaultLocalFontsSetting"=dword:00000002
 "DefaultSensorsSetting"=dword:00000002
 "DefaultSerialGuardSetting"=dword:00000002
 "CloudReportingEnabled"=dword:00000000
+"CloudProfileReportingEnabled"=dword:00000000
 "PasswordManagerEnabled"=dword:00000000
 "PasswordSharingEnabled"=dword:00000000
 "PasswordLeakDetectionEnabled"=dword:00000000
@@ -23,6 +30,9 @@ Windows Registry Editor Version 5.00
 "SafeBrowsingExtendedReportingEnabled"=dword:00000000
 "SafeBrowsingSurveysEnabled"=dword:00000000
 "SafeBrowsingDeepScanningEnabled"=dword:00000000
+"SafeBrowsingProxiedRealTimeChecksAllowed"=dword:00000000
+"UserSecuritySignalsReporting"=dword:00000000
+"UserSecurityAuthenticatedReporting"=dword:00000000
 "DeviceActivityHeartbeatEnabled"=dword:00000000
 "DeviceMetricsReportingEnabled"=dword:00000000
 "HeartbeatEnabled"=dword:00000000
@@ -46,13 +56,4 @@ Windows Registry Editor Version 5.00
 "ShoppingListEnabled"=dword:00000000
 "SyncDisabled"=dword:00000001
 "WebRtcIPHandling"="disable_non_proxied_udp"
-"ExtensionManifestV2Availability"=dword:00000002
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave\ExtensionInstallForcelist]
-"1"="cjpalhdlnbpafiamejdnhcphjbkeiagm"
-"2"="mnjggcdmjocbbbhaepdhchncahnbgone"
-"3"="jinjaccalgkegednnccohejagnlnfdag"
-"4"="eningockdidmgiojffjmkdblpjocbhgh"
-"5"="cnojnbdhbhnkbcieeekonklommdnndci"
-"6"="mpiodijhokgodhhofbcjdecpffjipkle"
-"7"="gcknhkkoolaabfmlnjonogaaifnjlfnp"
+"ExtensionSettings"="{\"cjpalhdlnbpafiamejdnhcphjbkeiagm\":{\"installation_mode\":\"normal_installed\",\"update_url\":\"https://extensionupdater.brave.com/service/update2/crx\",\"override_update_url\":true},\"mnjggcdmjocbbbhaepdhchncahnbgone\":{\"installation_mode\":\"normal_installed\",\"update_url\":\"https://extensionupdater.brave.com/service/update2/crx\",\"override_update_url\":true},\"jinjaccalgkegednnccohejagnlnfdag\":{\"installation_mode\":\"normal_installed\",\"update_url\":\"https://extensionupdater.brave.com/service/update2/crx\",\"override_update_url\":true},\"eningockdidmgiojffjmkdblpjocbhgh\":{\"installation_mode\":\"normal_installed\",\"update_url\":\"https://extensionupdater.brave.com/service/update2/crx\",\"override_update_url\":true},\"cnojnbdhbhnkbcieeekonklommdnndci\":{\"installation_mode\":\"normal_installed\",\"update_url\":\"https://extensionupdater.brave.com/service/update2/crx\",\"override_update_url\":true},\"mpiodijhokgodhhofbcjdecpffjipkle\":{\"installation_mode\":\"normal_installed\",\"update_url\":\"https://extensionupdater.brave.com/service/update2/crx\",\"override_update_url\":true},\"gcknhkkoolaabfmlnjonogaaifnjlfnp\":{\"installation_mode\":\"normal_installed\",\"update_url\":\"https://extensionupdater.brave.com/service/update2/crx\",\"override_update_url\":true}}"

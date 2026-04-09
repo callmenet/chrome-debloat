@@ -1,10 +1,12 @@
 {
+    "ExtensionManifestV2Availability": 2,
     "DefaultGeolocationSetting": 2,
     "DefaultNotificationsSetting": 2,
     "DefaultLocalFontsSetting": 2,
     "DefaultSensorsSetting": 2,
     "DefaultSerialGuardSetting": 2,
     "CloudReportingEnabled": false,
+    "CloudProfileReportingEnabled": false,
     "PasswordManagerEnabled": false,
     "PasswordSharingEnabled": false,
     "PasswordLeakDetectionEnabled": false,
@@ -12,6 +14,9 @@
     "SafeBrowsingExtendedReportingEnabled": false,
     "SafeBrowsingSurveysEnabled": false,
     "SafeBrowsingDeepScanningEnabled": false,
+    "SafeBrowsingProxiedRealTimeChecksAllowed": false,
+    "UserSecuritySignalsReporting": false,
+    "UserSecurityAuthenticatedReporting": false,
     "DeviceActivityHeartbeatEnabled": false,
     "DeviceMetricsReportingEnabled": false,
     "HeartbeatEnabled": false,
@@ -39,14 +44,34 @@
     "ShoppingListEnabled": false,
     "SyncDisabled": true,
     "WebRtcIPHandling": "disable_non_proxied_udp",
-    "ExtensionManifestV2Availability": 2,
-    "ExtensionInstallForcelist": [
-        "cjpalhdlnbpafiamejdnhcphjbkeiagm",
-        "mnjggcdmjocbbbhaepdhchncahnbgone",
-        "jinjaccalgkegednnccohejagnlnfdag",
-        "eningockdidmgiojffjmkdblpjocbhgh",
-        "cnojnbdhbhnkbcieeekonklommdnndci",
-        "mpiodijhokgodhhofbcjdecpffjipkle",
-        "gcknhkkoolaabfmlnjonogaaifnjlfnp"
-    ]
+    "ExtensionSettings": {
+        "cjpalhdlnbpafiamejdnhcphjbkeiagm": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://clients2.google.com/service/update2/crx"
+        },
+        "mnjggcdmjocbbbhaepdhchncahnbgone": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://clients2.google.com/service/update2/crx"
+        },
+        "jinjaccalgkegednnccohejagnlnfdag": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://clients2.google.com/service/update2/crx"
+        },
+        "eningockdidmgiojffjmkdblpjocbhgh": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://clients2.google.com/service/update2/crx"
+        },
+        "cnojnbdhbhnkbcieeekonklommdnndci": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://clients2.google.com/service/update2/crx"
+        },
+        "mpiodijhokgodhhofbcjdecpffjipkle": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://clients2.google.com/service/update2/crx"
+        },
+        "gcknhkkoolaabfmlnjonogaaifnjlfnp": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://clients2.google.com/service/update2/crx"
+        }
+    }
 }

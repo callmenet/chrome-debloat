@@ -47,8 +47,82 @@
 			<true/>
 			<key>BraveStatsPingEnabled</key>
 			<false/>
+			<key>BraveP3AEnabled</key>
+			<string>Disabled</string>
+			<key>BraveWebDiscoveryEnabled</key>
+			<false/>
+			<key>BraveWaybackMachineEnabled</key>
+			<false/>
 			<key>BraveSyncUrl</key>
 			<string></string>
+			<key>ExtensionSettings</key>
+			<dict>
+				<key>cjpalhdlnbpafiamejdnhcphjbkeiagm</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://extensionupdater.brave.com/service/update2/crx</string>
+					<key>override_update_url</key>
+					<true/>
+				</dict>
+				<key>mnjggcdmjocbbbhaepdhchncahnbgone</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://extensionupdater.brave.com/service/update2/crx</string>
+					<key>override_update_url</key>
+					<true/>
+				</dict>
+				<key>jinjaccalgkegednnccohejagnlnfdag</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://extensionupdater.brave.com/service/update2/crx</string>
+					<key>override_update_url</key>
+					<true/>
+				</dict>
+				<key>eningockdidmgiojffjmkdblpjocbhgh</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://extensionupdater.brave.com/service/update2/crx</string>
+					<key>override_update_url</key>
+					<true/>
+				</dict>
+				<key>cnojnbdhbhnkbcieeekonklommdnndci</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://extensionupdater.brave.com/service/update2/crx</string>
+					<key>override_update_url</key>
+					<true/>
+				</dict>
+				<key>mpiodijhokgodhhofbcjdecpffjipkle</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://extensionupdater.brave.com/service/update2/crx</string>
+					<key>override_update_url</key>
+					<true/>
+				</dict>
+				<key>gcknhkkoolaabfmlnjonogaaifnjlfnp</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://extensionupdater.brave.com/service/update2/crx</string>
+					<key>override_update_url</key>
+					<true/>
+				</dict>
+			</dict>
+			<key>ExtensionManifestV2Availability</key>
+			<integer>2</integer>
 			<key>DefaultGeolocationSetting</key>
 			<integer>2</integer>
 			<key>DefaultNotificationsSetting</key>
@@ -60,6 +134,8 @@
 			<key>DefaultSerialGuardSetting</key>
 			<integer>2</integer>
 			<key>CloudReportingEnabled</key>
+			<false/>
+			<key>CloudProfileReportingEnabled</key>
 			<false/>
 			<key>PasswordManagerEnabled</key>
 			<false/>
@@ -74,6 +150,12 @@
 			<key>SafeBrowsingSurveysEnabled</key>
 			<false/>
 			<key>SafeBrowsingDeepScanningEnabled</key>
+			<false/>
+			<key>SafeBrowsingProxiedRealTimeChecksAllowed</key>
+			<false/>
+			<key>UserSecuritySignalsReporting</key>
+			<false/>
+			<key>UserSecurityAuthenticatedReporting</key>
 			<false/>
 			<key>DeviceActivityHeartbeatEnabled</key>
 			<false/>
@@ -125,18 +207,6 @@
 			<true/>
 			<key>WebRtcIPHandling</key>
 			<string>disable_non_proxied_udp</string>
-			<key>ExtensionManifestV2Availability</key>
-			<integer>2</integer>
-			<key>ExtensionInstallForcelist</key>
-			<array>
-				<string>cjpalhdlnbpafiamejdnhcphjbkeiagm</string>
-				<string>mnjggcdmjocbbbhaepdhchncahnbgone</string>
-				<string>jinjaccalgkegednnccohejagnlnfdag</string>
-				<string>eningockdidmgiojffjmkdblpjocbhgh</string>
-				<string>cnojnbdhbhnkbcieeekonklommdnndci</string>
-				<string>mpiodijhokgodhhofbcjdecpffjipkle</string>
-				<string>gcknhkkoolaabfmlnjonogaaifnjlfnp</string>
-			</array>
 		</dict>
 	</array>
 </dict>

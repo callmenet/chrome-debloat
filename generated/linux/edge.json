@@ -6,15 +6,6 @@
     "EdgeWorkspacesEnabled": false,
     "ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled": true,
     "BlockExternalExtensions": false,
-    "ExtensionInstallForcelist": [
-        "odfafepnkmbhccpbejgmiehpchacaeak",
-        "mbmgnelfcpoecdepckhlhegpcehmpmji",
-        "eeagobfjdenkkddmbclomhiblgggliao",
-        "afopnekiinpekooejpchnkgfffaeceko",
-        "hckehkfhdkpmdlonmjaagiodlpjbonmc",
-        "efnbkdcfmcmnhlkaijjjmhjjgladedno",
-        "flcnoalcefgkhkinjkffipfdhglnpnem"
-    ],
     "ImplicitSignInEnabled": false,
     "LinkedAccountEnabled": false,
     "ProactiveAuthWorkflowEnabled": false,
@@ -94,18 +85,53 @@
     "WalletDonationEnabled": false,
     "WebWidgetAllowed": false,
     "ShowAcrobatSubscriptionButton": false,
+    "ExtensionSettings": {
+        "odfafepnkmbhccpbejgmiehpchacaeak": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+        },
+        "mbmgnelfcpoecdepckhlhegpcehmpmji": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+        },
+        "eeagobfjdenkkddmbclomhiblgggliao": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+        },
+        "afopnekiinpekooejpchnkgfffaeceko": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+        },
+        "hckehkfhdkpmdlonmjaagiodlpjbonmc": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+        },
+        "efnbkdcfmcmnhlkaijjjmhjjgladedno": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+        },
+        "flcnoalcefgkhkinjkffipfdhglnpnem": {
+            "installation_mode": "normal_installed",
+            "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+        }
+    },
+    "ExtensionManifestV2Availability": 2,
     "DefaultGeolocationSetting": 2,
     "DefaultNotificationsSetting": 2,
     "DefaultLocalFontsSetting": 2,
     "DefaultSensorsSetting": 2,
     "DefaultSerialGuardSetting": 2,
     "CloudReportingEnabled": false,
+    "CloudProfileReportingEnabled": false,
     "PasswordSharingEnabled": false,
     "PasswordLeakDetectionEnabled": false,
     "QuickAnswersEnabled": false,
     "SafeBrowsingExtendedReportingEnabled": false,
     "SafeBrowsingSurveysEnabled": false,
     "SafeBrowsingDeepScanningEnabled": false,
+    "SafeBrowsingProxiedRealTimeChecksAllowed": false,
+    "UserSecuritySignalsReporting": false,
+    "UserSecurityAuthenticatedReporting": false,
     "DeviceActivityHeartbeatEnabled": false,
     "DeviceMetricsReportingEnabled": false,
     "HeartbeatEnabled": false,
@@ -130,6 +156,5 @@
     "ParcelTrackingEnabled": false,
     "ShoppingListEnabled": false,
     "SyncDisabled": true,
-    "WebRtcIPHandling": "disable_non_proxied_udp",
-    "ExtensionManifestV2Availability": 2
+    "WebRtcIPHandling": "disable_non_proxied_udp"
 }

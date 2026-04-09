@@ -45,16 +45,6 @@
 			<true/>
 			<key>BlockExternalExtensions</key>
 			<false/>
-			<key>ExtensionInstallForcelist</key>
-			<array>
-				<string>odfafepnkmbhccpbejgmiehpchacaeak</string>
-				<string>mbmgnelfcpoecdepckhlhegpcehmpmji</string>
-				<string>eeagobfjdenkkddmbclomhiblgggliao</string>
-				<string>afopnekiinpekooejpchnkgfffaeceko</string>
-				<string>hckehkfhdkpmdlonmjaagiodlpjbonmc</string>
-				<string>efnbkdcfmcmnhlkaijjjmhjjgladedno</string>
-				<string>flcnoalcefgkhkinjkffipfdhglnpnem</string>
-			</array>
 			<key>ImplicitSignInEnabled</key>
 			<false/>
 			<key>LinkedAccountEnabled</key>
@@ -213,6 +203,60 @@
 			<false/>
 			<key>ShowAcrobatSubscriptionButton</key>
 			<false/>
+			<key>ExtensionSettings</key>
+			<dict>
+				<key>odfafepnkmbhccpbejgmiehpchacaeak</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://edge.microsoft.com/extensionwebstorebase/v1/crx</string>
+				</dict>
+				<key>mbmgnelfcpoecdepckhlhegpcehmpmji</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://edge.microsoft.com/extensionwebstorebase/v1/crx</string>
+				</dict>
+				<key>eeagobfjdenkkddmbclomhiblgggliao</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://edge.microsoft.com/extensionwebstorebase/v1/crx</string>
+				</dict>
+				<key>afopnekiinpekooejpchnkgfffaeceko</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://edge.microsoft.com/extensionwebstorebase/v1/crx</string>
+				</dict>
+				<key>hckehkfhdkpmdlonmjaagiodlpjbonmc</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://edge.microsoft.com/extensionwebstorebase/v1/crx</string>
+				</dict>
+				<key>efnbkdcfmcmnhlkaijjjmhjjgladedno</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://edge.microsoft.com/extensionwebstorebase/v1/crx</string>
+				</dict>
+				<key>flcnoalcefgkhkinjkffipfdhglnpnem</key>
+				<dict>
+					<key>installation_mode</key>
+					<string>normal_installed</string>
+					<key>update_url</key>
+					<string>https://edge.microsoft.com/extensionwebstorebase/v1/crx</string>
+				</dict>
+			</dict>
+			<key>ExtensionManifestV2Availability</key>
+			<integer>2</integer>
 			<key>DefaultGeolocationSetting</key>
 			<integer>2</integer>
 			<key>DefaultNotificationsSetting</key>
@@ -225,6 +269,8 @@
 			<integer>2</integer>
 			<key>CloudReportingEnabled</key>
 			<false/>
+			<key>CloudProfileReportingEnabled</key>
+			<false/>
 			<key>PasswordSharingEnabled</key>
 			<false/>
 			<key>PasswordLeakDetectionEnabled</key>
@@ -236,6 +282,12 @@
 			<key>SafeBrowsingSurveysEnabled</key>
 			<false/>
 			<key>SafeBrowsingDeepScanningEnabled</key>
+			<false/>
+			<key>SafeBrowsingProxiedRealTimeChecksAllowed</key>
+			<false/>
+			<key>UserSecuritySignalsReporting</key>
+			<false/>
+			<key>UserSecurityAuthenticatedReporting</key>
 			<false/>
 			<key>DeviceActivityHeartbeatEnabled</key>
 			<false/>
@@ -283,8 +335,6 @@
 			<true/>
 			<key>WebRtcIPHandling</key>
 			<string>disable_non_proxied_udp</string>
-			<key>ExtensionManifestV2Availability</key>
-			<integer>2</integer>
 		</dict>
 	</array>
 </dict>

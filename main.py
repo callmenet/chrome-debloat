@@ -66,7 +66,6 @@ METADATA = {
 }
 
 def format_reg_value(value) -> str:
-    """Formats a Python value into a Windows Registry .reg file value string."""
     if isinstance(value, bool):
         return f"dword:{'00000001' if value else '00000000'}"
     elif isinstance(value, int):
@@ -80,24 +79,29 @@ def format_reg_value(value) -> str:
 
 
 def load_policies(path: str) -> dict:
-    """Loads policies from a YAML file."""
     with open(path, "r") as fp:
         return yaml.load(fp.read())
 
 
 def make_registry_config(policies: dict, metadata: dict) -> str:
-    """Generates the content for a Windows .reg file from policies."""
     policies = policies.copy()
-    content = ["Windows Registry Editor Version 5.00", ""]
     base_key = metadata["key"]
-    list_policies = {}
+    content = ["Windows Registry Editor Version 5.00", ""]
 
-    # Separate list-based policies as they need specific handling (numbered subkeys/values) in .reg files.
+    content.append(f"[-{base_key}]")
+    content.append("")
+
+    dict_as_json_keys = ["ExtensionSettings"]
+    dict_policies = {}
+    for key in dict_as_json_keys:
+        if key in policies:
+            dict_policies[key] = policies.pop(key)
+
     list_policy_keys = [
-        "ExtensionInstallForcelist",
         "ExtensionInstallAllowlist",
         "ExtensionInstallBlocklist",
     ]
+    list_policies = {}
     for key in list_policy_keys:
         if key in policies:
             list_policies[key] = policies.pop(key)
@@ -105,7 +109,6 @@ def make_registry_config(policies: dict, metadata: dict) -> str:
     content.append(f"[{base_key}]")
     for policy_name, policy_value in policies.items():
         if isinstance(policy_value, dict):
-            # Handle nested policies by creating subkeys.
             content.append("")
             content.append(f"[{base_key}\\{policy_name}]")
             for sub_name, sub_value in policy_value.items():
@@ -113,7 +116,11 @@ def make_registry_config(policies: dict, metadata: dict) -> str:
         else:
             content.append(f'"{policy_name}"={format_reg_value(policy_value)}')
 
-    # Add list-based policies.
+    for policy_name, policy_value in dict_policies.items():
+        serialized = json.dumps(policy_value, separators=(",", ":"))
+        escaped = serialized.replace("\\", "\\\\").replace('"', '\\"')
+        content.append(f'"{policy_name}"="{escaped}"')
+
     for policy_name, policy_values in list_policies.items():
         if policy_values is not None:
             if policy_values:
@@ -127,7 +134,6 @@ def make_registry_config(policies: dict, metadata: dict) -> str:
 
 
 def make_mobileconfig(policies: dict, metadata: dict) -> bytes:
-    """Generates the content for a macOS .mobileconfig file (as bytes)."""
     config = {
         "PayloadVersion": 1,
         "PayloadScope": "System",
@@ -148,35 +154,29 @@ def make_mobileconfig(policies: dict, metadata: dict) -> bytes:
             }
         ],
     }
-    # Use standard XML plist format; required by macOS profiles. Returns bytes.
     return plistlib.dumps(config, sort_keys=False, fmt=plistlib.FMT_XML)
 
 
 def make_json_config(policies: dict, metadata: dict) -> str:
-    """Formats the policy dictionary as a JSON string for Linux."""
-    # Chromium on Linux expects a simple JSON object with policy keys/values.
     return json.dumps(policies, indent=4)
 
 
 def write_mobile_config(path: str, policy_content: dict, metadata: dict):
-    """Writes the policy content to a macOS .mobileconfig file."""
     try:
         mc_path = Path(path)
         mc_path.parent.mkdir(parents=True, exist_ok=True)
         conf_bytes = make_mobileconfig(policy_content, metadata)
-        with mc_path.open("wb") as fp: # Requires binary write mode.
+        with mc_path.open("wb") as fp:
             fp.write(conf_bytes)
     except Exception as e:
         print(f"Error writing mobileconfig {path}: {e}")
 
 
 def write_reg_config(path: str, policy_content: dict, metadata: dict):
-    """Writes the policy content to a Windows .reg file."""
     try:
         reg_path = Path(path)
         reg_path.parent.mkdir(parents=True, exist_ok=True)
         conf = make_registry_config(policy_content, metadata)
-        # Use UTF-8 without BOM for .reg files; generally safer for compatibility.
         with reg_path.open("w", encoding='utf-8') as fp:
             fp.write(conf)
     except Exception as e:
@@ -184,21 +184,18 @@ def write_reg_config(path: str, policy_content: dict, metadata: dict):
 
 
 def write_json_config(path: str, policy_content: dict, metadata: dict):
-    """Writes the policy content to a Linux JSON file."""
     try:
         json_path = Path(path)
         json_path.parent.mkdir(parents=True, exist_ok=True)
         conf_string = make_json_config(policy_content, metadata)
         with json_path.open("w", encoding='utf-8') as fp:
             fp.write(conf_string)
-            fp.write("\n") # Add trailing newline.
+            fp.write("\n")
     except Exception as e:
         print(f"Error writing JSON config {path}: {e}")
 
 
 def main():
-    """Load policy definitions and generate OS-specific configuration files."""
-
     try:
         policies_data = load_policies("policies.yaml")
     except Exception as e:
