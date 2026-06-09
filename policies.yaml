@@ -215,7 +215,6 @@ edge: &edge
   AlternateErrorPagesEnabled: false
   AmbientAuthenticationInPrivateModesEnabled: false
   BingAdsSuppression: true
-  ComposeInlineEnabled: false
   ConfigureDoNotTrack: false
   CryptoWalletEnabled: false
   DiagnosticData: 0
