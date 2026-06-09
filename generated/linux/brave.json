@@ -80,6 +80,14 @@
     "ReportWebsiteTelemetry": [
         ""
     ],
+    "GenAILocalFoundationalModelSettings": 1,
+    "HelpMeWriteSettings": 2,
+    "HistorySearchSettings": 2,
+    "TabCompareSettings": 2,
+    "SearchContentSharingSettings": 1,
+    "PrivacySandboxSiteEnabledAdsEnabled": false,
+    "PrivacySandboxAdTopicsEnabled": false,
+    "PrivacySandboxAdMeasurementEnabled": false,
     "AlternateErrorPagesEnabled": false,
     "AutofillCreditCardEnabled": false,
     "BackgroundModeEnabled": false,

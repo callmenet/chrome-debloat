@@ -37,7 +37,6 @@
     "AlternateErrorPagesEnabled": false,
     "AmbientAuthenticationInPrivateModesEnabled": false,
     "BingAdsSuppression": true,
-    "ComposeInlineEnabled": false,
     "ConfigureDoNotTrack": false,
     "CryptoWalletEnabled": false,
     "DiagnosticData": 0,
@@ -85,6 +84,9 @@
     "WalletDonationEnabled": false,
     "WebWidgetAllowed": false,
     "ShowAcrobatSubscriptionButton": false,
+    "EdgeEntraCopilotPageContext": false,
+    "CopilotAddressBarSuggestionsEnabled": false,
+    "ComposeInlineEnabled": false,
     "ExtensionSettings": {
         "odfafepnkmbhccpbejgmiehpchacaeak": {
             "installation_mode": "normal_installed",
@@ -146,6 +148,14 @@
     "ReportWebsiteTelemetry": [
         ""
     ],
+    "GenAILocalFoundationalModelSettings": 1,
+    "HelpMeWriteSettings": 2,
+    "HistorySearchSettings": 2,
+    "TabCompareSettings": 2,
+    "SearchContentSharingSettings": 1,
+    "PrivacySandboxSiteEnabledAdsEnabled": false,
+    "PrivacySandboxAdTopicsEnabled": false,
+    "PrivacySandboxAdMeasurementEnabled": false,
     "AutofillCreditCardEnabled": false,
     "BackgroundModeEnabled": false,
     "BrowserGuestModeEnabled": false,

@@ -91,6 +91,22 @@
 			<array>
 				<string></string>
 			</array>
+			<key>GenAILocalFoundationalModelSettings</key>
+			<integer>1</integer>
+			<key>HelpMeWriteSettings</key>
+			<integer>2</integer>
+			<key>HistorySearchSettings</key>
+			<integer>2</integer>
+			<key>TabCompareSettings</key>
+			<integer>2</integer>
+			<key>SearchContentSharingSettings</key>
+			<integer>1</integer>
+			<key>PrivacySandboxSiteEnabledAdsEnabled</key>
+			<false/>
+			<key>PrivacySandboxAdTopicsEnabled</key>
+			<false/>
+			<key>PrivacySandboxAdMeasurementEnabled</key>
+			<false/>
 			<key>AlternateErrorPagesEnabled</key>
 			<false/>
 			<key>AutofillCreditCardEnabled</key>

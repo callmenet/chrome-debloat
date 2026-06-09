@@ -41,7 +41,6 @@ Windows Registry Editor Version 5.00
 "AlternateErrorPagesEnabled"=dword:00000000
 "AmbientAuthenticationInPrivateModesEnabled"=dword:00000000
 "BingAdsSuppression"=dword:00000001
-"ComposeInlineEnabled"=dword:00000000
 "ConfigureDoNotTrack"=dword:00000000
 "CryptoWalletEnabled"=dword:00000000
 "DiagnosticData"=dword:00000000
@@ -89,6 +88,9 @@ Windows Registry Editor Version 5.00
 "WalletDonationEnabled"=dword:00000000
 "WebWidgetAllowed"=dword:00000000
 "ShowAcrobatSubscriptionButton"=dword:00000000
+"EdgeEntraCopilotPageContext"=dword:00000000
+"CopilotAddressBarSuggestionsEnabled"=dword:00000000
+"ComposeInlineEnabled"=dword:00000000
 "ExtensionManifestV2Availability"=dword:00000002
 "DefaultGeolocationSetting"=dword:00000002
 "DefaultNotificationsSetting"=dword:00000002
@@ -116,6 +118,14 @@ Windows Registry Editor Version 5.00
 "ReportDeviceSystemInfo"=dword:00000000
 "ReportDeviceUsers"=dword:00000000
 "ReportWebsiteTelemetry"=""
+"GenAILocalFoundationalModelSettings"=dword:00000001
+"HelpMeWriteSettings"=dword:00000002
+"HistorySearchSettings"=dword:00000002
+"TabCompareSettings"=dword:00000002
+"SearchContentSharingSettings"=dword:00000001
+"PrivacySandboxSiteEnabledAdsEnabled"=dword:00000000
+"PrivacySandboxAdTopicsEnabled"=dword:00000000
+"PrivacySandboxAdMeasurementEnabled"=dword:00000000
 "AutofillCreditCardEnabled"=dword:00000000
 "BackgroundModeEnabled"=dword:00000000
 "BrowserGuestModeEnabled"=dword:00000000

@@ -43,6 +43,14 @@ Windows Registry Editor Version 5.00
 "ReportDeviceSystemInfo"=dword:00000000
 "ReportDeviceUsers"=dword:00000000
 "ReportWebsiteTelemetry"=""
+"GenAILocalFoundationalModelSettings"=dword:00000001
+"HelpMeWriteSettings"=dword:00000002
+"HistorySearchSettings"=dword:00000002
+"TabCompareSettings"=dword:00000002
+"SearchContentSharingSettings"=dword:00000001
+"PrivacySandboxSiteEnabledAdsEnabled"=dword:00000000
+"PrivacySandboxAdTopicsEnabled"=dword:00000000
+"PrivacySandboxAdMeasurementEnabled"=dword:00000000
 "AlternateErrorPagesEnabled"=dword:00000000
 "AutofillCreditCardEnabled"=dword:00000000
 "BackgroundModeEnabled"=dword:00000000
