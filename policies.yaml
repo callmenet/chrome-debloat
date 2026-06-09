@@ -119,6 +119,16 @@ chrome: &chrome
   ReportDeviceUsers: false
   ReportWebsiteTelemetry:
   - ""
+  # AI 
+  GenAILocalFoundationalModelSettings: 1
+  HelpMeWriteSettings: 2
+  HistorySearchSettings: 2
+  TabCompareSettings: 2
+  SearchContentSharingSettings: 1
+  # Privacy 
+  PrivacySandboxSiteEnabledAdsEnabled: false
+  PrivacySandboxAdTopicsEnabled: false
+  PrivacySandboxAdMeasurementEnabled: false
   # Miscellaneous
   AlternateErrorPagesEnabled: false
   AutofillCreditCardEnabled: false
@@ -253,3 +263,6 @@ edge: &edge
   WalletDonationEnabled: false
   WebWidgetAllowed: false
   ShowAcrobatSubscriptionButton: false
+  EdgeEntraCopilotPageContext: false
+  CopilotAddressBarSuggestionsEnabled: false
+  ComposeInlineEnabled: false
