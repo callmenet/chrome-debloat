@@ -135,7 +135,8 @@ chrome: &chrome
   BackgroundModeEnabled: false
   BrowserGuestModeEnabled: false
   BrowserSignin: 0
-  BuiltInDnsClientEnabled: false
+  BuiltInDnsClientEnabled: true 
+  EncryptedClientHelloEnabled: true
   DefaultBrowserSettingEnabled: false
   MetricsReportingEnabled: false
   ParcelTrackingEnabled: false
