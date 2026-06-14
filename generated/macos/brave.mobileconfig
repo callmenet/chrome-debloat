@@ -208,7 +208,9 @@
 			<key>BrowserSignin</key>
 			<integer>0</integer>
 			<key>BuiltInDnsClientEnabled</key>
-			<false/>
+			<true/>
+			<key>EncryptedClientHelloEnabled</key>
+			<true/>
 			<key>DefaultBrowserSettingEnabled</key>
 			<false/>
 			<key>MetricsReportingEnabled</key>

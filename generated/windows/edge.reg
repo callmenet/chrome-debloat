@@ -130,7 +130,8 @@ Windows Registry Editor Version 5.00
 "BackgroundModeEnabled"=dword:00000000
 "BrowserGuestModeEnabled"=dword:00000000
 "BrowserSignin"=dword:00000000
-"BuiltInDnsClientEnabled"=dword:00000000
+"BuiltInDnsClientEnabled"=dword:00000001
+"EncryptedClientHelloEnabled"=dword:00000001
 "DefaultBrowserSettingEnabled"=dword:00000000
 "MetricsReportingEnabled"=dword:00000000
 "ParcelTrackingEnabled"=dword:00000000
