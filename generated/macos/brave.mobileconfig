@@ -62,63 +62,49 @@
 					<key>installation_mode</key>
 					<string>normal_installed</string>
 					<key>update_url</key>
-					<string>https://extensionupdater.brave.com/service/update2/crx</string>
-					<key>override_update_url</key>
-					<true/>
+					<string>https://clients2.google.com/service/update2/crx</string>
 				</dict>
 				<key>mnjggcdmjocbbbhaepdhchncahnbgone</key>
 				<dict>
 					<key>installation_mode</key>
 					<string>normal_installed</string>
 					<key>update_url</key>
-					<string>https://extensionupdater.brave.com/service/update2/crx</string>
-					<key>override_update_url</key>
-					<true/>
+					<string>https://clients2.google.com/service/update2/crx</string>
 				</dict>
 				<key>jinjaccalgkegednnccohejagnlnfdag</key>
 				<dict>
 					<key>installation_mode</key>
 					<string>normal_installed</string>
 					<key>update_url</key>
-					<string>https://extensionupdater.brave.com/service/update2/crx</string>
-					<key>override_update_url</key>
-					<true/>
+					<string>https://clients2.google.com/service/update2/crx</string>
 				</dict>
 				<key>eningockdidmgiojffjmkdblpjocbhgh</key>
 				<dict>
 					<key>installation_mode</key>
 					<string>normal_installed</string>
 					<key>update_url</key>
-					<string>https://extensionupdater.brave.com/service/update2/crx</string>
-					<key>override_update_url</key>
-					<true/>
+					<string>https://clients2.google.com/service/update2/crx</string>
 				</dict>
 				<key>cnojnbdhbhnkbcieeekonklommdnndci</key>
 				<dict>
 					<key>installation_mode</key>
 					<string>normal_installed</string>
 					<key>update_url</key>
-					<string>https://extensionupdater.brave.com/service/update2/crx</string>
-					<key>override_update_url</key>
-					<true/>
+					<string>https://clients2.google.com/service/update2/crx</string>
 				</dict>
 				<key>mpiodijhokgodhhofbcjdecpffjipkle</key>
 				<dict>
 					<key>installation_mode</key>
 					<string>normal_installed</string>
 					<key>update_url</key>
-					<string>https://extensionupdater.brave.com/service/update2/crx</string>
-					<key>override_update_url</key>
-					<true/>
+					<string>https://clients2.google.com/service/update2/crx</string>
 				</dict>
 				<key>gcknhkkoolaabfmlnjonogaaifnjlfnp</key>
 				<dict>
 					<key>installation_mode</key>
 					<string>normal_installed</string>
 					<key>update_url</key>
-					<string>https://extensionupdater.brave.com/service/update2/crx</string>
-					<key>override_update_url</key>
-					<true/>
+					<string>https://clients2.google.com/service/update2/crx</string>
 				</dict>
 			</dict>
 			<key>ExtensionManifestV2Availability</key>

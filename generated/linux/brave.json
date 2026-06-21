@@ -14,38 +14,31 @@
     "ExtensionSettings": {
         "cjpalhdlnbpafiamejdnhcphjbkeiagm": {
             "installation_mode": "normal_installed",
-            "update_url": "https://extensionupdater.brave.com/service/update2/crx",
-            "override_update_url": true
+            "update_url": "https://clients2.google.com/service/update2/crx"
         },
         "mnjggcdmjocbbbhaepdhchncahnbgone": {
             "installation_mode": "normal_installed",
-            "update_url": "https://extensionupdater.brave.com/service/update2/crx",
-            "override_update_url": true
+            "update_url": "https://clients2.google.com/service/update2/crx"
         },
         "jinjaccalgkegednnccohejagnlnfdag": {
             "installation_mode": "normal_installed",
-            "update_url": "https://extensionupdater.brave.com/service/update2/crx",
-            "override_update_url": true
+            "update_url": "https://clients2.google.com/service/update2/crx"
         },
         "eningockdidmgiojffjmkdblpjocbhgh": {
             "installation_mode": "normal_installed",
-            "update_url": "https://extensionupdater.brave.com/service/update2/crx",
-            "override_update_url": true
+            "update_url": "https://clients2.google.com/service/update2/crx"
         },
         "cnojnbdhbhnkbcieeekonklommdnndci": {
             "installation_mode": "normal_installed",
-            "update_url": "https://extensionupdater.brave.com/service/update2/crx",
-            "override_update_url": true
+            "update_url": "https://clients2.google.com/service/update2/crx"
         },
         "mpiodijhokgodhhofbcjdecpffjipkle": {
             "installation_mode": "normal_installed",
-            "update_url": "https://extensionupdater.brave.com/service/update2/crx",
-            "override_update_url": true
+            "update_url": "https://clients2.google.com/service/update2/crx"
         },
         "gcknhkkoolaabfmlnjonogaaifnjlfnp": {
             "installation_mode": "normal_installed",
-            "update_url": "https://extensionupdater.brave.com/service/update2/crx",
-            "override_update_url": true
+            "update_url": "https://clients2.google.com/service/update2/crx"
         }
     },
     "ExtensionManifestV2Availability": 2,
