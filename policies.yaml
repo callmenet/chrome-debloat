@@ -22,37 +22,6 @@ chromeExtensionSettings: &chromeExtensionSettings
       installation_mode: normal_installed
       update_url: https://clients2.google.com/service/update2/crx
 
-braveExtensionSettings: &braveExtensionSettings
-  ExtensionSettings:
-    cjpalhdlnbpafiamejdnhcphjbkeiagm: # uBlock Origin; Chrome Web Store
-      installation_mode: normal_installed
-      update_url: https://extensionupdater.brave.com/service/update2/crx
-      override_update_url: true
-    mnjggcdmjocbbbhaepdhchncahnbgone: # SponsorBlock; Chrome Web Store
-      installation_mode: normal_installed
-      update_url: https://extensionupdater.brave.com/service/update2/crx
-      override_update_url: true
-    jinjaccalgkegednnccohejagnlnfdag: # Violentmonkey; Chrome Web Store
-      installation_mode: normal_installed
-      update_url: https://extensionupdater.brave.com/service/update2/crx
-      override_update_url: true
-    eningockdidmgiojffjmkdblpjocbhgh: # Header Editor; Chrome Web Store
-      installation_mode: normal_installed
-      update_url: https://extensionupdater.brave.com/service/update2/crx
-      override_update_url: true
-    cnojnbdhbhnkbcieeekonklommdnndci: # Search By Image; Chrome Web Store
-      installation_mode: normal_installed
-      update_url: https://extensionupdater.brave.com/service/update2/crx
-      override_update_url: true
-    mpiodijhokgodhhofbcjdecpffjipkle: # Single File; Chrome Web Store
-      installation_mode: normal_installed
-      update_url: https://extensionupdater.brave.com/service/update2/crx
-      override_update_url: true
-    gcknhkkoolaabfmlnjonogaaifnjlfnp: # FoxyProxy; Chrome Web Store
-      installation_mode: normal_installed
-      update_url: https://extensionupdater.brave.com/service/update2/crx
-      override_update_url: true
-
 edgeExtensionSettings: &edgeExtensionSettings
   ExtensionSettings:
     odfafepnkmbhccpbejgmiehpchacaeak: # uBlock Origin; Edge Add-ons
@@ -147,7 +116,7 @@ chrome: &chrome
 
 # https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy
 brave: &brave
-  <<: [*braveExtensionSettings, *chrome]
+  <<: [*chromeExtensionSettings, *chrome]
   TorDisabled: true
   BraveRewardsDisabled: true
   BraveWalletDisabled: true
